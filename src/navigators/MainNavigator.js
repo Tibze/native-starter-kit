@@ -6,6 +6,8 @@ import Home from '../views/home/';
 
 const MainNavigator = StackNavigator({
   Home: { screen: Home },
+},{
+  headerMode: 'none',
 });
 
 export default MainNavigator;

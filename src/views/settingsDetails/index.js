@@ -21,15 +21,18 @@ class SettingsDetails extends Component {
 
   static navigationOptions = {
     title: 'Home',
-    tabBar: {
-      label: 'Home',
-      icon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-home' : 'ios-home-outline'}
-          size={26}
-          style={{ color: tintColor }}
-        />
-      ),
+    header: (navigation, defaultHeader) => {
+      let left = (
+        <Button transparent iconLeft
+          onPress={() => navigation.goBack()}
+        ><Icon name='ios-arrow-back' /></Button>
+      );
+      let right = (
+        <Button transparent iconRight
+          onPress={() => navigation.setParams({ mode: 'info' })}
+        ><Icon name='home' /></Button>
+      );
+      return { left, right };
     },
   };
 
@@ -37,6 +40,15 @@ class SettingsDetails extends Component {
 
     console.log(this.props);
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps');
+    console.log(nextProps);
+  }
+
+  _back() {
+    this.props.navigation.back(null);
   }
 
   // static propTypes = {

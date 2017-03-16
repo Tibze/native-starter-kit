@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 // import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Right, Input, Item } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -20,7 +20,6 @@ import styles from './styles';
 class Home extends Component {
 
   static navigationOptions = {
-    title: 'Home',
     tabBar: {
       label: 'Home',
       icon: ({ tintColor, focused }) => (
@@ -58,8 +57,17 @@ class Home extends Component {
 
     return (
       <Container style={styles.container}>
-
-
+        <Header>
+            <Left>
+                <Button transparent iconLeft>
+                    <Icon name='ios-arrow-back'/>
+                </Button>
+            </Left>
+            <Body>
+                <Title>Header</Title>
+            </Body>
+            <Right />
+        </Header>
         <Content>
           <TouchableOpacity onPress={ () => { this.props.navigation.navigate('BlankModal') }}>
             <Text>Home Tab</Text>

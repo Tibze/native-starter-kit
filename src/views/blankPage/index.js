@@ -27,6 +27,10 @@ class BlankPage extends Component {
         />
       ),
     },
+    header: (navigation, defaultHeader) => ({
+      ...defaultHeader,
+      visible: false,
+    }),    
   };
 
   static propTypes = {

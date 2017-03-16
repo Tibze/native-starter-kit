@@ -70,7 +70,7 @@ class Settings extends Component {
               <Row key={i}>
                 <TouchableOpacity
                   style={styles.row}
-                  onPress={() => navigate('BlankModal')}
+                  onPress={() => navigate('SettingsDetails')}
                 >
                   <Text style={styles.text}>{item}</Text>
                 </TouchableOpacity>

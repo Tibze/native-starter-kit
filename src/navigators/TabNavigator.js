@@ -14,6 +14,7 @@ const TabNavigatorC = TabNavigator({
        visible: false,
      },
    },
+   headerMode: 'none',
 });
 
 export default TabNavigatorC;

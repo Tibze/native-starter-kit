@@ -137,7 +137,7 @@ export default {
 
     // Footer
   footerHeight: 55,
-  footerDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#4179F7',
+  footerDefaultBg: (platform === 'ios') ? '#000' : '#4179F7',
 
 
     // FooterTab
@@ -149,7 +149,7 @@ export default {
   tabActiveBgColor: (platform === 'ios') ? '#cde1f9' : '#3F51B5',
 
     // Tab
-  tabDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#3F51B5',
+  tabDefaultBg: (platform === 'ios') ? '#131313' : '#3F51B5',
   topTabBarTextColor: (platform === 'ios') ? '#6b6b6b' : '#b3c7f9',
   topTabBarActiveTextColor: (platform === 'ios') ? '#007aff' : '#fff',
   topTabActiveBgColor: (platform === 'ios') ? '#cde1f9' : undefined,
@@ -158,8 +158,8 @@ export default {
 
 
     // Header
-  toolbarBtnColor: (platform === 'ios') ? '#007aff' : '#fff',
-  toolbarDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#3F51B5',
+  toolbarBtnColor: (platform === 'ios') ? '#131313' : '#fff',
+  toolbarDefaultBg: (platform === 'ios') ? '#f8f8f8' : '#3F51B5',
   toolbarHeight: (platform === 'ios') ? 64 : 56,
   toolbarIconSize: (platform === 'ios') ? 20 : 22,
   toolbarSearchIconSize: (platform === 'ios') ? 20 : 23,
@@ -178,7 +178,7 @@ export default {
   iconFamily: 'Ionicons',
   iconFontSize: (platform === 'ios') ? 30 : 28,
   iconMargin: 7,
-  iconHeaderSize: (platform === 'ios') ? 33 : 24,
+  iconHeaderSize: (platform === 'ios') ? 26 : 24,
 
 
     // InputGroup

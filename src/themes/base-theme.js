@@ -79,7 +79,7 @@ export default {
 
 
   // Color
-  brandPrimary: '#5067FF',
+  brandPrimary: '#131313',
   brandInfo: '#5bc0de',
   brandSuccess: '#5cb85c',
   brandDanger: '#d9534f',
@@ -118,7 +118,7 @@ export default {
   toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
   toolbarIconSize: (Platform.OS === 'ios') ? 20 : 22,
-  toolbarInputColor: '#CECDD2',
+  toolbarInputColor: '#000',
   toolbarInverseBg: '#222',
   toolbarTextColor: (Platform.OS === 'ios') ? '#000' : '#fff',
   get statusBarColor() {
