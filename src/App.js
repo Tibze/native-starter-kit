@@ -10,7 +10,7 @@ import Modal from 'react-native-modalbox';
 
 import { addNavigationHelpers } from 'react-navigation';
 
-import AppNavigator from './AppNavigator';
+import AppNavigator from './navigators/AppNavigator';
 import ProgressBar from './components/loaders/ProgressBar';
 
 import theme from './themes/base-theme';

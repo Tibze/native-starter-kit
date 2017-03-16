@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import { openDrawer } from '../../actions/drawer';
 import { setIndex } from '../../actions/list';
 import styles from './styles';
@@ -15,10 +17,20 @@ import styles from './styles';
 //   pushRoute,
 // } = actions;
 
-class Home extends Component {
+class Settings extends Component {
 
   static navigationOptions = {
-    title: 'Home',
+    title: 'Settings',
+    tabBar: {
+      label: 'Settings',
+      icon: ({ tintColor, focused }) => (
+        <Ionicons
+          name={focused ? 'ios-settings' : 'ios-settings-outline'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
   };
 
   componentDidMount(){
@@ -58,7 +70,7 @@ class Home extends Component {
               <Row key={i}>
                 <TouchableOpacity
                   style={styles.row}
-                  onPress={() => navigate('Blank',{mode: 'modal'})}
+                  onPress={() => navigate('BlankModal')}
                 >
                   <Text style={styles.text}>{item}</Text>
                 </TouchableOpacity>
@@ -85,4 +97,4 @@ const mapStateToProps = state => ({
   list: state.list.list,
 });
 
-export default connect(mapStateToProps, bindAction)(Home);
+export default connect(mapStateToProps, bindAction)(Settings);

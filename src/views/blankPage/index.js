@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header, Title, Content, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
@@ -15,6 +17,16 @@ class BlankPage extends Component {
 
   static navigationOptions = {
     title: 'Blank Page',
+    tabBar: {
+      label: 'Settings',
+      icon: ({ tintColor, focused }) => (
+        <Ionicons
+          name={focused ? 'ios-settings' : 'ios-settings-outline'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
   };
 
   static propTypes = {

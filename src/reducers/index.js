@@ -1,6 +1,6 @@
 
 import { combineReducers } from 'redux';
-import AppNavigator from '../AppNavigator';
+import AppNavigator from '../navigators/AppNavigator';
 
 import user from './user';
 import list from './list';
