@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import CodePush from 'react-native-code-push';
 
+import { connect } from 'react-redux';
+
 import { Container, Content, Text, View } from 'native-base';
 import Modal from 'react-native-modalbox';
+
+import { addNavigationHelpers } from 'react-navigation';
 
 import AppNavigator from './AppNavigator';
 import ProgressBar from './components/loaders/ProgressBar';
@@ -60,6 +64,9 @@ class App extends Component {
         this.setState({ downloadProgress: (receivedBytes / totalBytes) * 100 });
       }
     );
+
+    console.log(this.props);
+
   }
 
   render() {
@@ -118,8 +125,25 @@ class App extends Component {
       );
     }
 
-    return <AppNavigator />;
+    return <AppNavigator navigation={
+        addNavigationHelpers(
+          {
+            dispatch: this.props.dispatch,
+            state: this.props.nav,
+          }
+        )
+      } />;
   }
 }
 
-export default App;
+function bindAction(dispatch) {
+  return {
+    dispatch
+  };
+}
+
+const mapStateToProps = state => ({
+  nav: state.nav
+});
+
+export default connect(mapStateToProps, bindAction)(App);

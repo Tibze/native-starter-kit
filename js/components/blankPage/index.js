@@ -13,6 +13,10 @@ const {
 
 class BlankPage extends Component {
 
+  static navigationOptions = {
+    title: 'Blank Page',
+  };
+
   static propTypes = {
     name: React.PropTypes.string,
     index: React.PropTypes.number,
@@ -33,24 +37,6 @@ class BlankPage extends Component {
 
     return (
       <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.popRoute()}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-
-          <Body>
-            <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
-          </Body>
-
-          <Right>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="ios-menu" />
-            </Button>
-          </Right>
-        </Header>
-
         <Content padder>
           <Text>
             {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
@@ -69,7 +55,6 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  navigation: state.cardNavigation,
   name: state.user.name,
   index: state.list.selectedIndex,
   list: state.list.list,
